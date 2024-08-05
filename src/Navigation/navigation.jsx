@@ -103,6 +103,16 @@ const Navbar = () => {
 
         <li className="nav-item">
           <Link
+            to={{ pathname: "/newblog", state: { click: onClickAbout } }}
+            className="nav-link"
+            onClick={closeMenuHome}
+          >
+            New Blog
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link
             to={{ pathname: "/waiver", state: { click: onClickAbout } }}
             className="nav-link"
             onClick={closeMenuHome}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch,Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import { Helmet } from "react-helmet";
@@ -14,13 +14,14 @@ import LearnMore from "./Services/LearnMore";
 import Appointment from "./Appointment/AppointmentPage";
 import AppointmentConfirm from "./Appointment/AppointmentPageConfirm";
 import Blog from "./Blog/Blog";
+import NewBlog from "./New Blog/NewBlog";
 import FullBlog from "./Blog/FullBlog";
 import HealthyTips from "./Blog/HealthyTips";
 import Recipes from "./Blog/Recipes";
 import LivingWell from "./Blog/LivingWell";
 import Login from "./Admin/Login";
 import SignUp from "./Admin/SignUp";
-import AddPost from "./Blog/AddPost";
+import AddPost from "./New Blog/AddPost";
 import ConfirmationPage from "./Appointment/confirmationPage";
 import { AuthContext } from "./auth/AuthContext";
 import SeminarRegister from "./Seminar/SeminarRegister";
@@ -119,9 +120,7 @@ function App() {
                 <AddPost />
               </Route>
 
-              <Route path="/:blog_uid/addpost">
-                <AddPost />
-              </Route>
+
               <Route path="/availability">
                 <Availability />
               </Route>
@@ -158,6 +157,13 @@ function App() {
 
               <Route path="/blog">
                 <Blog />
+              </Route>
+
+              <Route path="/newblog">
+                <NewBlog/>
+              </Route>
+              <Route path="/addpost">
+                <AddPost/>
               </Route>
 
               <Route path="/contact">
